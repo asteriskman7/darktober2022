@@ -32,6 +32,7 @@
       }
       canvas {
         background: white;
+        user-select: none;
       }
       a {
         color: var(--hl);
@@ -200,6 +201,7 @@
           this.canvas.onmousemove = (e) => this.mouseMove(e);
           document.onkeydown = (e) => this.keydown(e);
           document.onkeyup = (e) => this.keyup(e);
+          document.onclick = (e) => this.onclick(e);
 
           this.sketchLoadsRemaining = 32; //31 sketches and the 0th sketch
 
@@ -296,6 +298,7 @@
 
         update() {
           if (this.currentSketch) {
+            this.currentSketch.clicked = this.clicked;
             this.currentSketch._update();
           }
         }
@@ -303,6 +306,7 @@
         draw() {
           if (this.currentSketch) {
             this.currentSketch._draw();
+            this.clicked = false;
           }
         }
 
@@ -342,6 +346,10 @@
 
         keyup(e) {
           delete this.keys[e.key];
+        }
+
+        onclick(e) {
+          this.clicked = true;
         }
 
         loadSketch(n) {
