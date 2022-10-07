@@ -1,7 +1,7 @@
 'use strict';
 
 window.sketchClass = class extends Sketch {
-  desc = '-';
+  desc = 'It was totally worth it.';
 
   load() {
     super.load();
