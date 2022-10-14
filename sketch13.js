@@ -15,6 +15,7 @@ window.sketchClass = class extends Sketch {
     super.load();
 
     this.objects = [];
+    this.body = undefined;
   }
 
   rndRange(min, max) {
