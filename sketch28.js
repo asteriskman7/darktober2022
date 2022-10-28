@@ -141,16 +141,16 @@ window.sketchClass = class extends Sketch {
       const dl = this.lmap(Math.random(), 0, 1, -5, 5);
       ctx.fillStyle = `hsl(0, 98%, ${43 + dl}%)`;
       ctx.fillRect(sx0, sy0, sw, sh);
-      ctx.font = '0.45em Arial';
+      ctx.font = '0.45em sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillStyle = `hsl(0, 98%, ${90 + dl}%)`;
-      //ctx.letterSpacing = '0px';
-      ctx.fillText('EMERGENCY BROADCAST SYSTEM', sx0 + sw / 2, sy0 + 10);
+      ctx.letterSpacing = '0px';
+      ctx.fillText('EMERGENCY ALERT', sx0 + sw / 2, sy0 + 10);
       const lines = [
        'THIS IS NOT A TEST',
        'STAY INSIDE',
-       'STAY AWAY FROM WINDOWS',
+       'AVOID WINDOWS',
        'IGNORE PHONE CALLS',
        'LOCK ALL DO@OD$@!!'
       ];
